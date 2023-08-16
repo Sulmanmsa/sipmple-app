@@ -18,7 +18,7 @@ pipeline{
         }
          stage("deploy"){
             steps{
-                deploy adapters: [tomcat9(credentialsId: 'deployTest', path: '', url: 'http://localhost:9494/')], contextPath: 'sipmple-app', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'app', path: '', url: 'http://localhost:9494/')], contextPath: 'sipmple-app', war: '**/*.war'
             }
             
         }
