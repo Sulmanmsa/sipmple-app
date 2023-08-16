@@ -14,8 +14,17 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-   
-   
+    
+    <dependencies>
+        <!-- Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    
     <build>
         <plugins>
             <plugin>
@@ -26,6 +35,27 @@
                     <warName>multiply-app</warName>
                 </configuration>
             </plugin>
+            <!-- Tomcat plugin for Maven -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:9494/manager/text</url>
+                    <server>TomcatServer</server>
+                    <path>/multiply-app</path>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+        <profile>
+            <id>TomcatServer</id>
+            <properties>
+                <tomcat.username>sulman</tomcat.username>
+                <tomcat.password>iamaboy@13</tomcat.password>
+            </properties>
+        </profile>
+    </profiles>
 </project>
