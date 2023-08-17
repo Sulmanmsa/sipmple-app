@@ -32,7 +32,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
                 <configuration>
-                    <warName>multiply-app</warName>
+                    <warName>sipmple-app</warName>
                 </configuration>
             </plugin>
             <!-- Tomcat plugin for Maven -->
@@ -43,7 +43,7 @@
                 <configuration>
                     <url>http://localhost:9494/manager/text</url>
                     <server>TomcatServer</server>
-                    <path>/multiply-app</path>
+                    <path>/sipmple-app</path>
                 </configuration>
             </plugin>
         </plugins>
